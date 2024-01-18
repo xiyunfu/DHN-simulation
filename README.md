@@ -7,6 +7,7 @@ Build for semester project - District heating network simulaiton
 - [Experiment Results](#experiment-results)
 - [Discussion](#discussion)
 - [Running the Code](#running-the-code)
+- [Citation](#citation)
 
 ## Introduction
 District heating involves the distribution of heat from a centralized source like a power plant or waste incinerator to various buildings for heating and hot water needs [1]. This system is particularly energy-efficient, cost-effective, and eco-friendly for urban regions in colder climates [2]. Accurate forecasting of district heat load, which is the required heat supply at a specific time [3], is crucial for efficient operation and planning of these systems. However, forecasting is complex due to the heat demand's non-linear and non-stationary characteristics.
@@ -21,3 +22,6 @@ Discuss the results of your experiments. To insert a graph, use the following sy
 
 ```markdown
 ![Alt text for your graph](path/to/your/graph.png)
+
+## Citation
+
