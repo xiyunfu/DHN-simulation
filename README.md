@@ -4,7 +4,7 @@ Build for semester project - District heating network simulation.
 ## Table of Contents
 - [Introduction](#introduction)
 - [Analysis](#analysis)
-- [Technique](#technique)
+- [Methodology](#methodology)
 - [Experiment Results](#experiment-results)
 - [Discussion](#discussion)
 - [Running the Code](#running-the-code)
@@ -55,15 +55,27 @@ The heating network is designed with a central heating station that feeds into 8
 
 ### Analysis of the yearly data
 ![hs_t_year](images/hs_t.png)
-1. Based on the plot, it's easy to see that we can split the data into summer and winter, according to the different demand patterns. Summer dataset contains the data from June to October, winter dataset contains the rest.
-For the average temperature/pressure plots above, we can further validate that there are distinguishing differences between summer and winter heating supply demand.
+1.The graphical analysis clearly delineates distinct demand patterns that facilitate the categorization of the data into two seasonal sets: summer and winter. The summer data set encompasses the period from June to October, reflecting specific demand characteristics of this season. Conversely, the winter data set comprises the remaining months, capturing a different demand profile. 
+The observed variations in the average temperature and pressure, as illustrated in the above plots, further substantiate the marked seasonal distinctions in heating supply demands between summer and winter.
 ![all_t_year](images/average_t.png)
 ![all_p_year](images/average_p.png)
-![hs_t_year](images/hs_t.png)
 
-3. The temperature difference between supply and return is about 30 °C for all pipes and substations.
+<figure>
+  <img src="images/average_t.png" width="500" height="300">
+  <figcaption>Temperature for all nodes through a year</figcaption>
+</figure>
+<figure>
+  <img src="images/average_p.png" width="500" height="300">
+  <figcaption>Pressure for all nodes through a year</figcaption>
+</figure>
 
-4. 
+2. A consistent temperature differential of approximately 30 °C is observed between the supply and return flows across all pipes and substations. To exemplify this, a temperature profile of a randomly selected pipe has been plotted over an annual cycle. This plot serves to visually represent the temperature disparity between the supply and return networks throughout the year.
+![t_diff](images/random_pipe_t.png)
+<figure>
+  <img src="images/random_pipe_t.png" width="500" height="300">
+  <figcaption>Return/Supply Temperature of a random selected pipe node through a year</figcaption>
+</figure>
+
 ## Methodology
 ### Enhanced K-hop Information Aggregation via Shortest Path Analysis in Graph Networks
 The methodology for identifying the shortest paths within a graph structure draws inspiration from established algorithms within the domain of graph theory [Citation Needed]. In the current research, we extend beyond the conventional paradigm of aggregating information solely from the immediate neighbors. We propose an advanced k-hop information gathering technique that systematically captures node attributes connected by the shortest path within a predefined maximal distance. This approach enables the assimilation of a richer informational context over a specified number of network layers.
@@ -106,9 +118,25 @@ It is noteworthy that the central region of the network demonstrates a heightene
 ![random_node_p](images/st-prediction_node_461.png)
 ![random_node_st](images/ST_prediction.png)
 
-```markdowna  
-![Alt text for your graph](path/to/your/graph.png)
-```
+<figure>
+  <img src="images/acc_loop.png" width="500" height="300">
+  <figcaption>Error of Pressure Pridiction in the loop network</figcaption>
+</figure>
+<figure>
+  <img src="images/error_t_loop.png" width="500" height="300">
+  <figcaption>Error of Supply Temperature Prediction in the tree network</figcaption>
+</figure>
+
+<figure>
+  <img src="images/prediction_node_461.png" width="500" height="300">
+  <figcaption>Pressure Prediction of a randomly selected node</figcaption>
+</figure>
+<figure>
+  <img src="images/ST_prediction.png" width="500" height="300">
+  <figcaption>Supply Temperature Prediction of a randomly selected node</figcaption>
+</figure>
+
+
 ## Running the Code
 To run the code provided in Colab Notebook, make sure to add the [data] folder to Google drive under path [/content/drive/My Drive/] first. The [data] directory is in link: https://drive.google.com/drive/folders/1xx12tLFajrRgSRFmo05LQ7-vveLED9Rp?usp=drive_link
 
