@@ -29,11 +29,11 @@ Forecasting district heat load is a complex task that involves predicting future
 
 **Physical relationship and formula:**
 Darcy–Weisbach equation
-$
-\frac{\Delta p}{L} = f_D \cdot \frac{\rho}{2} \cdot \frac{\langle v \rangle^2}{D_H},
-$
-In fluid dynamics, the Darcy–Weisbach equation is an empirical equation that relates the head loss, or pressure loss, due to friction along a given length of pipe to the average velocity of the fluid flow for an incompressible fluid. [] Therefore, the relations between pressure loss and mass flow are found.
-  
+$$
+\frac{\Delta p}{L} = f_D \cdot \frac{\rho}{2} \cdot \frac{\langle v \rangle^2}{D_H}
+$$
+In the field of fluid dynamics, the Darcy-Weisbach equation is an empirical formula that establishes a relationship between the loss of head or pressure loss and the average velocity of fluid flow along a specific pipe length, specifically for incompressible fluids. This formula facilitates the establishment of a connection between pressure loss and mass flow. In the context of this case study, it becomes feasible to primarily focus on predicting temperature and pressure, while deriving the mass flow values indirectly using the Darcy-Weisbach equation.
+
 **Node Representation Approach:**
 In this study, a node representation framework is adopted. This means all network components, including the Heating Station, substations, and pipes, are conceptualized as nodes rather than edges. Each node is characterized by three primary attributes: temperature, pressure, and mass flow. This node-centric approach facilitates the implementation of graph neural networks. Additionally, given that the structural configuration of the District Heating Network remains constant, this representation ensures a stable graph structure. It allows for model training focused on varying node attributes while maintaining an unchanged graph structure.
 
@@ -42,17 +42,22 @@ In this study, a node representation framework is adopted. This means all networ
 - At the Substations: The pressure attribute is known.
 - Other Attributes: The remaining attributes, including those at various nodes and interconnecting pipes, are subject to prediction through the model.
 
-### Analysis of the network structure
-The network is constructed by one heating station and 89 substations, connected by pipes. There are two different connecting strategies, tree structure and looped structure, and both of them are fully connected. 
-- Tree schema: Radial connection, no loop.
-  
-- Looped schema: There is one loop in the structure, that will cause more complicated behavior of the physical elements distribution.
+### Structural Analysis of the Heating Network
+The heating network is designed with a central heating station that feeds into 89 substations through an intricate piping system. This system employs two principal strategies for connectivity: a tree structure and a looped structure, with both designs achieving a state of full network integration.
+
+1. The tree configuration is characterized by a radial pattern, where each substation is connected to a single path leading back to the heating station, thereby eliminating any possibility of loop formations.
+
+2. The looped configuration introduces a singular loop within the network, contributing to a more complex distribution of the thermal and hydraulic parameters. This loop facilitates multiple pathways for the flow, which can lead to variations in temperature, pressure, and mass flow rates, requiring more sophisticated models for accurate prediction and control of the system's behavior. The presence of a loop can enhance system resilience and provide alternative routes for heat distribution, potentially improving system redundancy and operational flexibility. However, it also adds complexity to the management of flow dynamics, necessitating advanced analysis to ensure efficient operation.
+
+3. The supply and return network: the supply network, which distributes heat to the substations, and the return network, which carries the cooled fluid back to the heating station, are nearly mirror images in terms of their structure and function. Given this symmetry, the study leverages a single graph-based representation for both networks. By duplicating the features—such as temperature, pressure, and mass flow—of each node in the supply network to its corresponding node in the return network, the model efficiently captures the dynamics of the entire system within a unified framework. This approach simplifies the modeling process without sacrificing the accuracy of the system's representation, as it assumes that the conditions affecting both the supply and return flows are comparable and can be analyzed using the same set of parameters.
+
 ### Analysis of the yearly data
 1. Based on the plot, it's easy to see that we can split the data into summer and winter, according to the different demand patterns. Summer dataset contains the data from June to October, winter dataset contains the rest.
    For the average temperature/pressure plots above, we can further validate that there are distinguishing differences between summer and winter heating supply demand.
 2. The temperature difference between supply and return is about 30 °C for all pipes and substations.
+
 3. 
-## Technique
+## Methodology
 ### Enhanced K-hop Information Aggregation via Shortest Path Analysis in Graph Networks
 The methodology for identifying the shortest paths within a graph structure draws inspiration from established algorithms within the domain of graph theory [Citation Needed]. In the current research, we extend beyond the conventional paradigm of aggregating information solely from the immediate neighbors. We propose an advanced k-hop information gathering technique that systematically captures node attributes connected by the shortest path within a predefined maximal distance. This approach enables the assimilation of a richer informational context over a specified number of network layers.
 
@@ -77,14 +82,19 @@ In this case study, the node regression ct_KHOP model consists of several key co
 
 The ct_KHOP GNN model is designed to be a sophisticated network designed for regressing graph-structured data. It incorporates multiple processing layers, including MLPs for feature embedding, GCN layers for capturing the graph topology's influence on node features, and linear layers for feature transformation. The model emphasizes normalization and non-linear activation to manage feature distribution and introduce non-linearity, essential for capturing complex patterns within the data. This architecture suggests a focus on learning robust node representations that are subsequently regressed to a target output.
 
-###
-
 ## Experiment Results
-
 ### Accuracy
+After a training process of 200 epochs for pressure and 400 epochs for supply temperature, the graphical representations provided clearly indicate a notable degree of precision in the model predictions for both pressure and supply temperature within the network. Specifically, the Mean Absolute Percentage Error (MAPE) for pressure predictions registers below 0.5%, while the supply temperature predictions maintain a MAPE around 1%. Additionally, the Root Mean Square Error (RMSE) values are quantified as 0.05 bar for pressure and 1.5 °C for supply temperature.
+
+It is noteworthy that the central region of the network demonstrates a heightened level of predictive accuracy. This observation suggests that the model's performance is particularly robust in this area, potentially due to more stable and consistent operational conditions or denser data availability, which allows for more accurate modeling and analysis of the system's behavior.
+
+|                   | MAPE  | RMSE |
+|-------------------|-------|------|
+| Pressure          | 0.40%  | 0.04 bar |
+| Supply Temperature| 1.69%    | 1.68 °C   |
+
 [picture of the tree/looped network, temperature and pressure]
 
-Method to compute the return temperature
 
 ```markdowna  
 ![Alt text for your graph](path/to/your/graph.png)
