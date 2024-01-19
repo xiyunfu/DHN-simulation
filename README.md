@@ -49,35 +49,36 @@ The heating network is designed with a central heating station that feeds into 8
 
 1. The tree configuration is characterized by a radial pattern, where each substation is connected to a single path leading back to the heating station, thereby eliminating any possibility of loop formations.
 <figure>
-  <img src="images/tree_network.png" width="1000" height="900">
-  <figcaption>The tree structure network</figcaption>
+  <img src="images/tree_network.png" width="800" height="600">
+  <figcaption style="text-align: center;">The tree structure network</figcaption>
 </figure>
 
 2. The looped configuration introduces a singular loop within the network, contributing to a more complex distribution of the thermal and hydraulic parameters. This loop facilitates multiple pathways for the flow, which can lead to variations in temperature, pressure, and mass flow rates, requiring more sophisticated models for accurate prediction and control of the system's behavior. The presence of a loop can enhance system resilience and provide alternative routes for heat distribution, potentially improving system redundancy and operational flexibility. However, it also adds complexity to the management of flow dynamics, necessitating advanced analysis to ensure efficient operation.
 <figure>
-  <img src="images/loop_network.png" width="1000" height="900">
-  <figcaption>The looped structure network</figcaption>
+  <img src="images/loop_network.png" width="800" height="600">
+  <figcaption style="text-align: center;">The looped structure network</figcaption>
 </figure>
 
 3. The supply and return network: the supply network, which distributes heat to the substations, and the return network, which carries the cooled fluid back to the heating station, are nearly mirror images in terms of their structure and function. Given this symmetry, the study leverages a single graph-based representation for both networks. By duplicating the features—such as temperature, pressure, and mass flow—of each node in the supply network to its corresponding node in the return network, the model efficiently captures the dynamics of the entire system within a unified framework. This approach simplifies the modeling process without sacrificing the accuracy of the system's representation, as it assumes that the conditions affecting both the supply and return flows are comparable and can be analyzed using the same set of parameters.
 
 ### Analysis of the yearly data
-![hs_t_year](images/hs_t.png)
 <figure>
-  <img src="images/hs_t.png" width="600" height="400">
+  <img src="images/hs_t.png" width="800" height="500">
 <!--   <figcaption>The looped structure network</figcaption> -->
 </figure>
 1.The graphical analysis clearly delineates distinct demand patterns that facilitate the categorization of the data into two seasonal sets: summer and winter. The summer data set encompasses the period from June to October, reflecting specific demand characteristics of this season. Conversely, the winter data set comprises the remaining months, capturing a different demand profile. 
 The observed variations in the average temperature and pressure, as illustrated in the above plots, further substantiate the marked seasonal distinctions in heating supply demands between summer and winter.
 
-<figure>
-  <img src="images/average_t.png" width="600" height="400">
-<!--   <figcaption>Temperature for all nodes through a year</figcaption> -->
-</figure>
-<figure>
-  <img src="images/average_p.png" width="600" height="400">
-<!--   <figcaption>Pressure for all nodes through a year</figcaption> -->
-</figure>
+<div style="display: flex; justify-content: space-around;">
+  <figure>
+    <img src="images/average_t.png" width="600" height="400">
+    <!-- <figcaption>Temperature for all nodes through a year</figcaption> -->
+  </figure>
+  <figure>
+    <img src="images/average_p.png" width="600" height="400">
+    <!-- <figcaption>Pressure for all nodes through a year</figcaption> -->
+  </figure>
+</div>
 
 2. A consistent temperature differential of approximately 30 °C is observed between the supply and return flows across all pipes and substations. To exemplify this, a temperature profile of a randomly selected pipe has been plotted over an annual cycle. This plot serves to visually represent the temperature disparity between the supply and return networks throughout the year.
 <figure>
@@ -122,22 +123,14 @@ It is noteworthy that the central region of the network demonstrates a heightene
 | Supply Temperature| 1.69%    | 1.68 °C   |
 
 <figure>
-  <img src="images/acc_loop.png" width="1000" height="800">
-  <figcaption>Error of Pressure Pridiction in the loop network</figcaption>
+  <img src="images/acc_loop.png" width="800" height="600">
+  <figcaption style="text-align: center;">Error of Pressure Pridiction in the loop network</figcaption>
 </figure>
 <figure>
-  <img src="images/error_t_loop.png" width="1000" height="800">
-  <figcaption>Error of Supply Temperature Prediction in the tree network</figcaption>
+  <img src="images/error_t_loop.png" width="800" height="600">
+  <figcaption style="text-align: center;">Error of Supply Temperature Prediction in the tree network</figcaption>
 </figure>
 
-<figure>
-  <img src="images/st-prediction_node_461.png" width="500" height="300">
-<!--   <figcaption>Pressure Prediction of a randomly selected node</figcaption> -->
-</figure>
-<figure>
-  <img src="images/ST_prediction.png" width="500" height="300">
-<!--   <figcaption>Supply Temperature Prediction of a randomly selected node</figcaption> -->
-</figure>
 
 <div style="display: flex; justify-content: space-around;">
   <figure>
