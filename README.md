@@ -23,14 +23,19 @@ Forecasting district heat load is a complex task that involves predicting future
 - Pipes: These form the connecting infrastructure of the network.
 
 **Physical elements:**
-1. Temperature
-2. Pressure
-3. Mass flow
+1. Temperature (C)
+2. Pressure (bar)
+3. Mass flow (m^3/s)
 
 **Physical relationship and formula:**
 How to compute the mass flow based on known temperature and pressure. 
 How to compute the return temperature based on known supply temperature and pressure.
-
+- Darcy–Weisbach equation
+  $$
+\frac{\Delta p}{L} = f_D \cdot \frac{\rho}{2} \cdot \frac{\langle v \rangle^2}{D_H},
+  $$
+  In fluid dynamics, the Darcy–Weisbach equation is an empirical equation that relates the head loss, or pressure loss, due to friction along a given length of pipe to the average velocity of the fluid flow for an incompressible fluid. [] Therefore, the relations between pressure loss and mass flow are found.
+  
 **Node Representation Approach:**
 In this study, a node representation framework is adopted. This means all network components, including the Heating Station, substations, and pipes, are conceptualized as nodes rather than edges. Each node is characterized by three primary attributes: temperature, pressure, and mass flow. This node-centric approach facilitates the implementation of graph neural networks. Additionally, given that the structural configuration of the District Heating Network remains constant, this representation ensures a stable graph structure. It allows for model training focused on varying node attributes while maintaining an unchanged graph structure.
 
@@ -76,4 +81,4 @@ Method to compute the return temperature
 ![Alt text for your graph](path/to/your/graph.png)
 ```
 ## Citation
-
+[//]Darcy–Weisbach equation. (2024, January 10). In Wikipedia. https://en.wikipedia.org/wiki/Darcy%E2%80%93Weisbach_equation
