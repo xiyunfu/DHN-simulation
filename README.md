@@ -143,6 +143,7 @@ It is noteworthy that the central region of the network demonstrates a heightene
   </figure>
 </div>
 
+The provided plots depict the simulation results for the supply temperature at 100 distinct time points throughout the year. The plot on the left illustrates the simulation outcomes for a tree network configuration, while the plot on the right represents the simulation for a loop network structure.
 
 ## Running the Code
 To run the code provided in Colab Notebook, make sure to add the [data] folder to Google drive under path [/content/drive/My Drive/] first. The [data] directory is in link: https://drive.google.com/drive/folders/1xx12tLFajrRgSRFmo05LQ7-vveLED9Rp?usp=drive_link
