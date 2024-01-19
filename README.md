@@ -1,5 +1,5 @@
 # DHN-simulation
-Build for semester project - District heating network simulaiton
+Build for semester project - District heating network simulation.
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -19,17 +19,31 @@ Forecasting district heat load is a complex task that involves predicting future
 ### Basic knowledge of District Heating Network
 Component: 
 1. The Heating Station(HS): Providing hot water to the substations through pipes.
-2. The substations: 
+2. The substations: The end nodes of the network, have heating demand.
+3. The pipes: connecting the network.
+
+Node representation:
+In this project, node representation is employed, which means that all the components are represented as nodes instead of edges. For each node, there are three main attributes, temperature, pressure and mass flow. Node representation provides a clear way to implement the graph neural network. Further more, considering the characteristic of District Heating simulation that the graph structure always stay the same, node represnetation also provides a more convenient way to have a steady graph structure, training on data only changing the nodes information without changing the graph information.
+
 The known attributes: 
+For the heating station: temperature is known
+For the substations: pressure is known
+The rest attributes are the values that need to be predicted by the model.
+
 ### Analysis of the network structure
 The network is constructed by one heating station and 89 substations, connected by pipes. There are two different connecting strategies, tree structure and looped structure, and both of them are fully connected. In tree structure, there is no loop, 
 ### Analysis of the yearly data
 
-
+split the data into summer and winter, according to the different demand patterns. 
 ## Technique
 ### Shortest Path Network
-
+Implement the idea from paper ...
 ### Design of the neural network
+hyperparameter:
+max distance:
+layer:
+lr:
+dropout:
 
 ###
 
