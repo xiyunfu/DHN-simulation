@@ -93,8 +93,8 @@ It is noteworthy that the central region of the network demonstrates a heightene
 | Pressure          | 0.40%  | 0.04 bar |
 | Supply Temperature| 1.69%    | 1.68 °C   |
 
-[picture of the tree/looped network, temperature and pressure]
-
+![network_p](images/acc_loop.png)
+![network_st](images/error_t_loop.png)
 
 ```markdowna  
 ![Alt text for your graph](path/to/your/graph.png)
