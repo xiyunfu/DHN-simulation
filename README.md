@@ -23,15 +23,15 @@ Forecasting district heat load is a complex task that involves predicting future
 - Pipes: These form the connecting infrastructure of the network.
 
 **Physical parameters:**
-1. Temperature (C)
+1. Temperature (°C)
 2. Pressure (bar)
 3. Mass flow ($m^3/s$)
 
 **Physical relationship and formula:**
 Darcy–Weisbach equation
-$$
+$
 \frac{\Delta p}{L} = f_D \cdot \frac{\rho}{2} \cdot \frac{\langle v \rangle^2}{D_H},
-$$
+$
 In fluid dynamics, the Darcy–Weisbach equation is an empirical equation that relates the head loss, or pressure loss, due to friction along a given length of pipe to the average velocity of the fluid flow for an incompressible fluid. [] Therefore, the relations between pressure loss and mass flow are found.
   
 **Node Representation Approach:**
