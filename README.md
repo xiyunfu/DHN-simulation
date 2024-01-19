@@ -17,29 +17,43 @@ Forecasting district heat load is a complex task that involves predicting future
 
 ## Analysis
 ### Basic knowledge of District Heating Network
-Components:
-Heating Station (HS): This facility supplies hot water to the network, distributing it through pipes to substations.
-Substations: These are the terminal points of the network, where the heat demand is actualized.
-Pipes: These form the connecting infrastructure of the network.
+**Components:**
+- Station (HS): This facility supplies hot water to the network, distributing it through pipes to substations.
+- Substations: These are the terminal points of the network, where the heat demand is actualized.
+- Pipes: These form the connecting infrastructure of the network.
 
-Node Representation Approach:
+**Physical elements:**
+1. Temperature
+2. Pressure
+3. Mass flow
+
+**Physical relationship and formula:**
+How to compute the mass flow based on known temperature and pressure. 
+How to compute the return temperature based on known supply temperature and pressure.
+
+**Node Representation Approach:**
 In this study, a node representation framework is adopted. This means all network components, including the Heating Station, substations, and pipes, are conceptualized as nodes rather than edges. Each node is characterized by three primary attributes: temperature, pressure, and mass flow. This node-centric approach facilitates the implementation of graph neural networks. Additionally, given that the structural configuration of the District Heating Network remains constant, this representation ensures a stable graph structure. It allows for model training focused on varying node attributes while maintaining an unchanged graph structure.
 
-Known and Predictive Attributes:
-At the Heating Station: The temperature attribute is known.
-At the Substations: The pressure attribute is known.
-Other Attributes: The remaining attributes, including those at various nodes and interconnecting pipes, are subject to prediction through the model.
+**Known and Predictive Attributes:**
+- At the Heating Station: The temperature attribute is known.
+- At the Substations: The pressure attribute is known.
+- Other Attributes: The remaining attributes, including those at various nodes and interconnecting pipes, are subject to prediction through the model.
 
 ### Analysis of the network structure
-The network is constructed by one heating station and 89 substations, connected by pipes. There are two different connecting strategies, tree structure and looped structure, and both of them are fully connected. In tree structure, there is no loop, 
+The network is constructed by one heating station and 89 substations, connected by pipes. There are two different connecting strategies, tree structure and looped structure, and both of them are fully connected. 
+- Tree schema: Radial connection, no loop.
+  
+- Looped schema: There is one loop in the structure, that will cause more complicated behavior of the physical elements distribution.
 ### Analysis of the yearly data
-
-split the data into summer and winter, according to the different demand patterns. 
+1. Based on the plot, it's easy to see that we can split the data into summer and winter, according to the different demand patterns. Summer dataset contains the data from June to October, winter dataset contains the rest.
+   For the average temperature/pressure plots above, we can further validate that there are distinguishing differences between summer and winter heating supply demand.
+2. The temperature difference between supply and return is about 30 °C for all pipes and substations.
+3. 
 ## Technique
 ### Shortest Path Network
 Implement the idea from paper ...
 ### Design of the neural network
-hyperparameter:
+**hyperparameter:**
 max distance:
 layer:
 lr:
