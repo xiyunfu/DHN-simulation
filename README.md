@@ -31,9 +31,9 @@ Forecasting district heat load is a complex task that involves predicting future
 How to compute the mass flow based on known temperature and pressure. 
 How to compute the return temperature based on known supply temperature and pressure.
 - Darcy–Weisbach equation
-  $$
+$$
 \frac{\Delta p}{L} = f_D \cdot \frac{\rho}{2} \cdot \frac{\langle v \rangle^2}{D_H},
-  $$
+$$
   In fluid dynamics, the Darcy–Weisbach equation is an empirical equation that relates the head loss, or pressure loss, due to friction along a given length of pipe to the average velocity of the fluid flow for an incompressible fluid. [] Therefore, the relations between pressure loss and mass flow are found.
   
 **Node Representation Approach:**
