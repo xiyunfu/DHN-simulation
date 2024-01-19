@@ -17,18 +17,18 @@ Forecasting district heat load is a complex task that involves predicting future
 
 ## Analysis
 ### Basic knowledge of District Heating Network
-Component: 
-1. The Heating Station(HS): Providing hot water to the substations through pipes.
-2. The substations: The end nodes of the network, have heating demand.
-3. The pipes: connecting the network.
+Components:
+Heating Station (HS): This facility supplies hot water to the network, distributing it through pipes to substations.
+Substations: These are the terminal points of the network, where the heat demand is actualized.
+Pipes: These form the connecting infrastructure of the network.
 
-Node representation:
-In this project, node representation is employed, which means that all the components are represented as nodes instead of edges. For each node, there are three main attributes, temperature, pressure and mass flow. Node representation provides a clear way to implement the graph neural network. Further more, considering the characteristic of District Heating simulation that the graph structure always stay the same, node represnetation also provides a more convenient way to have a steady graph structure, training on data only changing the nodes information without changing the graph information.
+Node Representation Approach:
+In this study, a node representation framework is adopted. This means all network components, including the Heating Station, substations, and pipes, are conceptualized as nodes rather than edges. Each node is characterized by three primary attributes: temperature, pressure, and mass flow. This node-centric approach facilitates the implementation of graph neural networks. Additionally, given that the structural configuration of the District Heating Network remains constant, this representation ensures a stable graph structure. It allows for model training focused on varying node attributes while maintaining an unchanged graph structure.
 
-The known attributes: 
-For the heating station: temperature is known
-For the substations: pressure is known
-The rest attributes are the values that need to be predicted by the model.
+Known and Predictive Attributes:
+At the Heating Station: The temperature attribute is known.
+At the Substations: The pressure attribute is known.
+Other Attributes: The remaining attributes, including those at various nodes and interconnecting pipes, are subject to prediction through the model.
 
 ### Analysis of the network structure
 The network is constructed by one heating station and 89 substations, connected by pipes. There are two different connecting strategies, tree structure and looped structure, and both of them are fully connected. In tree structure, there is no loop, 
