@@ -46,17 +46,24 @@ In this study, a node representation framework is adopted. This means all networ
 The heating network is designed with a central heating station that feeds into 89 substations through an intricate piping system. This system employs two principal strategies for connectivity: a tree structure and a looped structure, with both designs achieving a state of full network integration.
 
 1. The tree configuration is characterized by a radial pattern, where each substation is connected to a single path leading back to the heating station, thereby eliminating any possibility of loop formations.
+![tree_network](images/tree_network.png)
 
 2. The looped configuration introduces a singular loop within the network, contributing to a more complex distribution of the thermal and hydraulic parameters. This loop facilitates multiple pathways for the flow, which can lead to variations in temperature, pressure, and mass flow rates, requiring more sophisticated models for accurate prediction and control of the system's behavior. The presence of a loop can enhance system resilience and provide alternative routes for heat distribution, potentially improving system redundancy and operational flexibility. However, it also adds complexity to the management of flow dynamics, necessitating advanced analysis to ensure efficient operation.
+![loop_network](images/loop_network.png)
 
 3. The supply and return network: the supply network, which distributes heat to the substations, and the return network, which carries the cooled fluid back to the heating station, are nearly mirror images in terms of their structure and function. Given this symmetry, the study leverages a single graph-based representation for both networks. By duplicating the features—such as temperature, pressure, and mass flow—of each node in the supply network to its corresponding node in the return network, the model efficiently captures the dynamics of the entire system within a unified framework. This approach simplifies the modeling process without sacrificing the accuracy of the system's representation, as it assumes that the conditions affecting both the supply and return flows are comparable and can be analyzed using the same set of parameters.
 
 ### Analysis of the yearly data
+![hs_t_year](images/hs_t.png)
 1. Based on the plot, it's easy to see that we can split the data into summer and winter, according to the different demand patterns. Summer dataset contains the data from June to October, winter dataset contains the rest.
-   For the average temperature/pressure plots above, we can further validate that there are distinguishing differences between summer and winter heating supply demand.
-2. The temperature difference between supply and return is about 30 °C for all pipes and substations.
+For the average temperature/pressure plots above, we can further validate that there are distinguishing differences between summer and winter heating supply demand.
+![all_t_year](images/average_t.png)
+![all_p_year](images/average_p.png)
+![hs_t_year](images/hs_t.png)
 
-3. 
+3. The temperature difference between supply and return is about 30 °C for all pipes and substations.
+
+4. 
 ## Methodology
 ### Enhanced K-hop Information Aggregation via Shortest Path Analysis in Graph Networks
 The methodology for identifying the shortest paths within a graph structure draws inspiration from established algorithms within the domain of graph theory [Citation Needed]. In the current research, we extend beyond the conventional paradigm of aggregating information solely from the immediate neighbors. We propose an advanced k-hop information gathering technique that systematically captures node attributes connected by the shortest path within a predefined maximal distance. This approach enables the assimilation of a richer informational context over a specified number of network layers.
@@ -93,8 +100,11 @@ It is noteworthy that the central region of the network demonstrates a heightene
 | Pressure          | 0.40%  | 0.04 bar |
 | Supply Temperature| 1.69%    | 1.68 °C   |
 
-![network_p](images/acc_loop.png)
-![network_st](images/error_t_loop.png)
+![loop_network_p](images/acc_loop.png)
+![tree_network_st](images/error_t_loop.png)
+
+![random_node_p](images/st-prediction_node_461.png)
+![random_node_st](images/ST_prediction.png)
 
 ```markdowna  
 ![Alt text for your graph](path/to/your/graph.png)
