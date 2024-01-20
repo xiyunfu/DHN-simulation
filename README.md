@@ -151,10 +151,10 @@ To run the code provided in Colab Notebook, make sure to add the [data] folder t
 And follow the order of cells to run the Colab Notebook.
 
 ## Citation
-[1]Werner, S. (2017). International review of district heating and cooling. Energy, 137, 617-631. https://doi.org/10.1016/j.energy.2017.04.045
-[2]Rezaie, B., & Rosen, M. A. (2012). District heating and cooling: Review of technology and potential enhancements. Applied Energy, 93, 2-10. https://doi.org/10.1016/j.apenergy.2011.04.020
-[3]Tardioli, G., Kerrigan, R., Oates, M., O‘Donnell, J., & Finn, D. (2015). Data Driven Approaches for Prediction of Building Energy Consumption at Urban Level. Energy Procedia, 78, 3378-3383. https://doi.org/10.1016/j.egypro.2015.11.754
-[4]Gadd, H., & Werner, S. (2013). Daily heat load variations in Swedish district heating systems. Applied Energy, 106, 47-55. https://doi.org/10.1016/j.apenergy.2013.01.030
-[5]Chung, W. H., Gu, Y. H., & Yoo, S. J. (2022). District heater load forecasting based on machine learning and parallel CNN-LSTM attention. Energy, 246, 123350. https://doi.org/10.1016/j.energy.2022.123350
-[6]Darcy–Weisbach equation. (2024, January 10). In Wikipedia. https://en.wikipedia.org/wiki/Darcy%E2%80%93Weisbach_equation
-[7]Abboud, R., Dimitrov, R., & Ceylan, İ. İ. (2022). Shortest Path Networks for Graph Property Prediction. ArXiv. /abs/2206.01003
+[1]Werner, S. (2017). International review of district heating and cooling. Energy, 137, 617-631. https://doi.org/10.1016/j.energy.2017.04.045  
+[2]Rezaie, B., & Rosen, M. A. (2012). District heating and cooling: Review of technology and potential enhancements. Applied Energy, 93, 2-10. https://doi.org/10.1016/j.apenergy.2011.04.020  
+[3]Tardioli, G., Kerrigan, R., Oates, M., O‘Donnell, J., & Finn, D. (2015). Data Driven Approaches for Prediction of Building Energy Consumption at Urban Level. Energy Procedia, 78, 3378-3383. https://doi.org/10.1016/j.egypro.2015.11.754  
+[4]Gadd, H., & Werner, S. (2013). Daily heat load variations in Swedish district heating systems. Applied Energy, 106, 47-55. https://doi.org/10.1016/j.apenergy.2013.01.030  
+[5]Chung, W. H., Gu, Y. H., & Yoo, S. J. (2022). District heater load forecasting based on machine learning and parallel CNN-LSTM attention. Energy, 246, 123350. https://doi.org/10.1016/j.energy.2022.123350  
+[6]Darcy–Weisbach equation. (2024, January 10). In Wikipedia. https://en.wikipedia.org/wiki/Darcy%E2%80%93Weisbach_equation  
+[7]Abboud, R., Dimitrov, R., & Ceylan, İ. İ. (2022). Shortest Path Networks for Graph Property Prediction. ArXiv. /abs/2206.01003  
