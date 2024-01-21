@@ -130,6 +130,10 @@ It is noteworthy that the central region of the network demonstrates a heightene
   <img src="images/error_t_loop.png" width="800" height="600">
   <figcaption style="text-align: center;">Error of Supply Temperature Prediction in the tree network</figcaption>
 </figure>
+<figure>
+  <img src="images/network_t_loop.png" width="800" height="600">
+  <figcaption style="text-align: center;">Error of Supply Temperature Prediction in the tree network</figcaption>
+</figure>
 
 
 <div style="display: flex; justify-content: space-around;">
