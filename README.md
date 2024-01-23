@@ -117,21 +117,29 @@ After a training process of 200 epochs for pressure and 400 epochs for supply te
 
 It is noteworthy that the central region of the network demonstrates a heightened level of predictive accuracy. This observation suggests that the model's performance is particularly robust in this area, potentially due to more stable and consistent operational conditions or denser data availability, which allows for more accurate modeling and analysis of the system's behavior.
 
-|                   | MAPE  | RMSE |
-|-------------------|-------|------|
-| Pressure          | 0.40%  | 0.04 bar |
-| Supply Temperature| 1.69%    | 1.68 °C   |
+| Pressure         | MAPE  | RMSE(bar) |
+|------------------|-------|-----------|
+| Loop          | 0.21%  | 0.031  |
+| Tree          | 0.24%  | 0.036  |
 
 <figure>
-  <img src="images/acc_loop.png" width="800" height="600">
+  <img src="images/loop_p_network.png" width="800" height="600">
   <figcaption style="text-align: center;">Error of Pressure Pridiction in the loop network</figcaption>
 </figure>
-
 <figure>
-  <img src="images/network_t_loop.png" width="800" height="600">
-  <figcaption style="text-align: center;">Error of Supply Temperature Prediction in the loop network</figcaption>
+  <img src="images/tree_p_network.png" width="800" height="600">
+  <figcaption style="text-align: center;">Error of Pressure Pridiction in the tree network</figcaption>
 </figure>
 
+| Temperature      | MAPE  | RMSE(K) |
+|------------------|-------|---------|
+| Loop             | 1.46%  | 1.50  |
+| Tree             | 1.69%  | 1.68  |
+
+<figure>
+  <img src="images/loop_t_network.png" width="800" height="600">
+  <figcaption style="text-align: center;">Error of Supply Temperature Prediction in the loop network</figcaption>
+</figure>
 <figure>
   <img src="images/error_t_loop.png" width="800" height="600">
   <figcaption style="text-align: center;">Error of Supply Temperature Prediction in the tree network</figcaption>
@@ -141,7 +149,18 @@ It is noteworthy that the central region of the network demonstrates a heightene
 
 <div style="display: flex; justify-content: space-around;">
   <figure>
-    <img src="images/st-prediction_node_461.png" width="500" height="300">
+    <img src="images/loop_p_hist.png" width="500" height="300">
+    <!-- <figcaption>Histogram of Pressure Prediction of a randomly selected node</figcaption> -->
+  </figure>
+  <figure>
+    <img src="images/tree_p_hist.png" width="500" height="300">
+    <!-- <figcaption>Supply Temperature Prediction of a randomly selected node</figcaption> -->
+  </figure>
+</div>
+
+<div style="display: flex; justify-content: space-around;">
+  <figure>
+    <img src="images/loop_st_hist.png" width="500" height="300">
     <!-- <figcaption>Pressure Prediction of a randomly selected node</figcaption> -->
   </figure>
   <figure>
@@ -149,7 +168,6 @@ It is noteworthy that the central region of the network demonstrates a heightene
     <!-- <figcaption>Supply Temperature Prediction of a randomly selected node</figcaption> -->
   </figure>
 </div>
-
 The provided plots depict the simulation results for the supply temperature at 100 distinct time points throughout the year. The plot on the left illustrates the simulation outcomes for a tree network configuration, while the plot on the right represents the simulation for a loop network structure.
 
 ## Running the Code
