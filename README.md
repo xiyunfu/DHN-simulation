@@ -134,7 +134,7 @@ It is noteworthy that the central region of the network demonstrates a heightene
 | Temperature      | MAPE  | RMSE(K) |
 |------------------|-------|---------|
 | Loop             | 1.46%  | 1.50  |
-| Tree             | 1.69%  | 1.68  |
+| Tree             | 2.60%  | 2.70  |
 
 <figure>
   <img src="images/loop_st_network.png" width="800" height="600">
