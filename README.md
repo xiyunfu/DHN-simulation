@@ -137,7 +137,7 @@ It is noteworthy that the central region of the network demonstrates a heightene
 | Tree             | 1.69%  | 1.68  |
 
 <figure>
-  <img src="images/loop_t_network.png" width="800" height="600">
+  <img src="images/loop_st_network.png" width="800" height="600">
   <figcaption style="text-align: center;">Error of Supply Temperature Prediction in the loop network</figcaption>
 </figure>
 <figure>
