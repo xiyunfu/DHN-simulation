@@ -141,7 +141,7 @@ It is noteworthy that the central region of the network demonstrates a heightene
   <figcaption style="text-align: center;">Error of Supply Temperature Prediction in the loop network</figcaption>
 </figure>
 <figure>
-  <img src="images/error_t_loop.png" width="800" height="600">
+  <img src="images/tree_st_network.png" width="800" height="600">
   <figcaption style="text-align: center;">Error of Supply Temperature Prediction in the tree network</figcaption>
 </figure>
 
@@ -164,7 +164,7 @@ It is noteworthy that the central region of the network demonstrates a heightene
     <!-- <figcaption>Pressure Prediction of a randomly selected node</figcaption> -->
   </figure>
   <figure>
-    <img src="images/ST_prediction.png" width="500" height="300">
+    <img src="images/tree_st_hist.png" width="500" height="300">
     <!-- <figcaption>Supply Temperature Prediction of a randomly selected node</figcaption> -->
   </figure>
 </div>
